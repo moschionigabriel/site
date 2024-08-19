@@ -1,0 +1,171 @@
+:root {
+  --bg-color: white; /* Background color */
+  --text-color: midnightblue; /* Text color */
+  --box-shadow: 1px 1px 1px 0.5px darkgray;
+  --gray: lightgray;
+  --togle: midnightblue;
+}
+
+/* Define the dark theme */
+.dark-theme {
+  --bg-color: midnightblue; /* Background color */
+  --text-color: azure; /* Text color */
+  --box-shadow: 1px 1px 1px 0.5px darkgray;
+  --gray: darkgray;
+  --togle: white;
+}
+
+/* Style the toggle button */
+#toggle {
+  position: fixed; /* Fix the position of the button */
+  top:25px;
+  right:25px;
+  height: 15px;
+  width: 15px;
+  border-radius:50%;
+  background-color:var(--togle);
+}
+/* Change the button color on hover */
+#toggle:hover {
+  background-color: gray;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+	height:80vh;
+	margin: 5%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color:var(--bg-color);
+	color: var(--text-color);
+}
+
+.container {
+	display: flex;
+	justify-content:space-evenly;
+	align-items:flex-end;
+	gap: 10px;
+}
+
+.card {
+	border-style: solid;
+	border-width: 0.5px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap:8px;
+	box-shadow: var(--box-shadow);
+	background-color:var(--bg-color);
+        color: var(--text-color);
+}
+
+details, a {
+	padding:8px;
+	background-color:var(--bg-color);
+        color: var(--text-color);
+	border-radius: 8px;
+}
+
+#primeira {
+	order: 1;
+}
+
+#segunda {
+	align-items: center;
+	order: 2;
+}
+
+#terceira {
+	align-items: flex-start;
+	order: 3;
+}
+
+h2 {
+       padding:8px;
+       text-decoration: underline;
+       cursor: grab;
+}
+
+h2:active {
+	cursor:grabbing;
+}
+
+img {
+	padding: 2px;
+}
+
+#lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+h1,p {
+    z-index:2;
+    background-color:var(--bg-color);
+    color: var(--text-color);
+}
+
+
+#me {
+    z-index:1;
+}
+
+.card::before {
+	position: absolute;
+	content: "*";
+	left: -10px;
+}
+
+
+#me::before{
+	position: absolute;
+	content: "1";
+	left: -10px;
+}
+
+mark {
+	background-color: var(--gray);
+	color: var(--text-color);
+}
+
+
+
+@media (max-width: 660px) {
+ img {
+	  display: none;
+  }
+
+/*   #primeira {
+	  order: 3;
+  }
+
+  #segunda {
+	  order: 1;
+  }
+*/
+
+  #terceira {
+	  order: 2;
+	  align-items: center;
+	  justify-content:center;
+  }
+
+  .container {
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content:center;
+	  gap: 20px;
+  }
+}
