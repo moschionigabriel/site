@@ -39,7 +39,7 @@
 
 body {
 	height:100vh;
-	padding-top: 5%;
+	padding-top: 3%;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
